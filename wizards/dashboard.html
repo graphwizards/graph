@@ -1,0 +1,516 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard | GraphWizards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/master.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
+    <link rel="shortcut icon" href="../icon.ico" /> 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+</head>
+
+<body>
+        <div class="error-container" id="page-error" >
+            <div class="error-container-2" >
+                <div class="error-container-content">
+                    <img class="error-img" src="./images/error.png" alt="Load Image">
+                    <h1 class="error-headline">404 ERROR</h1>
+                    <p class="error-text">This Page Is Under Construction <br>
+                            Please Come Back Latter</p>
+
+                            <br>
+                            <button class="golden-btn"  id="close-error" >Close</button>
+                            
+                            <script>
+                                $("#close-error").click(function(){
+                                    $("#page-error").fadeOut(500);
+                                    
+                                } );
+
+                                $(".error-container-2").click(function(){
+                                    $("#page-error").fadeOut(200);
+                                                                   } );
+                            </script>
+                </div>
+            </div>
+        
+            </div>
+    <div class="main2">
+        <div class="main2-left">
+            <img class="dash-icon" src="images/logo.svg" alt="Graphwizards" >
+            <br>
+
+            <ul>
+                <li id="home"><i class="fas fa-igloo"></i> Home</li>
+                <li id="users" ><i class="fas fa-user-friends"></i> Admin Users</li>
+                <li id="wallpaper"><i class="fas fa-image"></i>Wallpaper</li>
+                <li id="services" class="disable-btn"><i class="fas fa-award"></i>Services</li>
+                <li id="about"> <i class="fas fa-info-circle"></i>About Detail</li>  
+                <li id="portfolio"><i class="fas fa-folder-open"></i>Portfolio</li>
+                <li id="newsletter"><i class="fas fa-newspaper"></i>Newzletter</li>
+                <li id="social"><i class="fas fa-link"></i>Social Links</li>
+                <li id="mail"><i class="fas fa-envelope"></i>Mail</li>
+            </ul>
+            <a href="logout.phpp">
+            <button class="logout-btn">Logout</button></a>
+        </div>
+
+        <div class="main2-right">
+            <div class="dash-navbar"><span class="page-tittle"> Home </span>
+<span class="dash-navbar-headline">    welcome ! Graph_wizards</span>
+
+            </div>
+
+            <div class="main-container">
+                    <div id="header-notification" class="header-notification">
+                            <div class="header-notification-left">
+                                    <p class="notification-text"> <span class="notification-text-2" id="notification-text-2"> </span>  </p> </div>
+                        <div class="header-notification-right">
+                                <span class="close-notification" id="close-notification"> close </span>
+                        </div>
+                        </div>
+                        <script>
+$(document).ready(function(){
+    $("#home").addClass("focus");
+$("#home").click(function(){
+    $("#home-container").slideDown();
+    $("#user-container,#wallpaper-container,#services-container,#about-container,#portfolio-container,#newsletter-container,#social-container,#mail-container").fadeOut(200);
+    $("#home").addClass("focus");
+    $("#users,#wallpaper,#services,#about,#portfolio,#newsletter,#social,#mail").removeClass("focus");
+    $(".page-tittle").text('Home',300)});
+
+$("#users").click(function(){
+    $("#home-container,#wallpaper-container,#services-container,#about-container,#portfolio-container,#newsletter-container,#social-container,#mail-container").fadeOut(200);
+    $("#user-container").slideDown();
+    $("#users").addClass("focus");
+    $("#home,#wallpaper,#services,#about,#portfolio,#newsletter,#social,#mail").removeClass("focus");
+    $(".page-tittle").text('Users');});
+
+$("#wallpaper").click(function(){
+    $("#home-container,#user-container,#services-container,#about-container,#portfolio-container,#newsletter-container,#social-container,#mail-container").fadeOut(200);
+    $("#wallpaper-container").slideDown();
+    $("#wallpaper").addClass("focus");
+    $("#home,#users,#services,#about,#portfolio,#newsletter,#social,#mail").removeClass("focus");
+    $(".page-tittle").text('Wallpaper');});
+
+$("#services").click(function(){
+    $("#page-error").fadeIn(200);
+    // $("#home-container,#user-container,#wallpaper-container,#about-container,#portfolio-container,#newsletter-container,#social-container,#mail-containe").fadeOut(200);
+    // $("#services-container").slideDown();
+    // $("#services").addClass("focus");
+    // $("#home,#users,#wallpaper,#about,#portfolio,#newsletter,#social,#mail").removeClass("focus");
+    // $(".page-tittle").text('Services');
+});
+$("#about").click(function(){
+    $("#page-error").fadeIn(200);
+    // $("#home-container,#user-container,#wallpaper-container,#services-container,#portfolio-container,#newsletter-container,#social-container,#mail-container").fadeOut(200);
+    // $("#about-container").slideDown();
+    // $("#about").addClass("focus");
+    // $("#home,#users,#wallpaper,#services,#portfolio,#newsletter,#social,#mail").removeClass("focus");
+    // $(".page-tittle").text('About Detail');
+});
+
+$("#portfolio,#view-all-card").click(function(){
+    $("#home-container,#user-container,#wallpaper-container,#services-container,#about-container,#newsletter-container,#social-container,#mail-container").fadeOut(200);
+    $("#portfolio-container").slideDown();
+    $("#portfolio").addClass("focus");
+    $("#home,#users,#wallpaper,#services,#about,#newsletter,#social,#mail").removeClass("focus");
+    $(".page-tittle").text('Portfolio');});
+
+$("#newsletter").click(function(){
+    $("#home-container,#user-container,#wallpaper-container,#services-container,#about-container,#portfolio-container,#social-container,#mail-container").fadeOut(200);
+    $("#newsletter-container").slideDown();
+    $("#newsletter").addClass("focus");
+    $("#home,#users,#wallpaper,#services,#about,#portfolio,#social,#mail").removeClass("focus");
+    $(".page-tittle").text('Newsletter');});
+
+$("#social").click(function(){
+    $("#page-error").fadeIn(200);
+    // $("#home-container,#user-container,#wallpaper-container,#services-container,#about-container,#portfolio-container,#newsletter-container,#mail-container").fadeOut(200);
+    // $("#social-container").slideDown();
+    // $("#social").addClass("focus");
+    // $("#home,#users,#wallpaper,#services,#about,#portfolio,#newsletter,#mail").removeClass("focus");
+    // $(".page-tittle").text('Social Links');
+});
+
+$("#mail").click(function(){
+    $("#page-error").fadeIn(200);
+    // $("#home-container,#user-container,#wallpaper-container,#services-container,#about-container,#portfolio-container,#newsletter-container,#social-container").fadeOut(200);
+    // $("#mail-container").slideDown();
+    // $("#mail").addClass("focus");
+    // $("#home,#users,#wallpaper,#services,#about,#portfolio,#newsletter,#social").removeClass("focus");
+    // $(".page-tittle").text('Mail');
+});
+$("#close-notification").click(function(){
+        $("#header-notification").slideUp();
+    });
+});
+    </script>
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Home Container +++++++++++++++++++++++++++++++++++++++++++++ -->
+<div id="home-container" class="hiden-container">  
+<div class="analysis-data">
+
+<div class="cards">
+    <h1>233 <br> <span>Total Visiter</span></h1>
+</div>
+
+<div class="cards">
+        <h1>4 <br> <span>Live Visiter</span></h1>
+</div>
+
+<div class="cards">
+        <h1>300 <br> <span>Total Pageview</span></h1>
+</div>
+
+
+
+
+</div>
+<div class="notification ">
+        <div class="notification-left">
+<h1 class="notification-head">Latest Newsletters</h1>
+<table>
+    <tr>
+        <td class="special-td">26</td>
+        <td>24-5-2019</td>
+        <td>immohitdhiman@gmail.com</td>
+    </tr>
+    <tr>
+        <td class="special-td">25</td>
+        <td>22-5-2019</td>
+        <td>sunny4eever@gmail.com</td>
+    </tr>
+</table>
+
+
+        </div>
+
+        <div class="notification-right">
+            <form onsubmit="return pushnotification()">
+                    <h1 class="notification-head">Push Notification</h1>
+                    <textarea name="notification" id="notify" cols="30" rows="8"></textarea>
+                  <br>  <a href="#"> <button class="push" >Puch Notification</button> </a>
+
+            </form>
+                
+        </div>
+        
+        </div>
+
+<div class="latest-upload" id="scroll-left">
+
+        <h1 class="latest-head"> <br> Latest Portfolio Upload</h1>
+        <div class="image-card-container">
+            <div class="image-card">
+                <div class="image-store">
+                    <img class="main-image" src="../portfolio/Untitled-1 copy.jpg" alt="" srcset="">
+
+                </div>
+                <div class="image-card-text">
+                    <h1 class="image-card-head">Product packaging and labels</h1>
+                    <p class="image-card-detail">24-4-2019 <span>Enabled</span></p>
+                    <p class="image-card-desc">Creative Professional Designer's Team which satisfy your various Designing requirements. </p>
+                </div>
+            </div>
+
+            <div class="image-card">
+                    <div class="image-store">
+                        <img class="main-image" src="../portfolio/ffffffffffff.jpg" alt="" srcset="">
+    
+                    </div>
+                    <div class="image-card-text">
+                        <h1 class="image-card-head">Product packaging and labels</h1>
+                        <p class="image-card-detail">24-4-2019 <span>Enabled</span></p>
+                        <p class="image-card-desc">Creative Professional Designer's Team which satisfy your various Designing requirements. </p>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                        <div class="image-store">
+                            <img class="main-image" src="../portfolio/fdvbfdgb.jpg" alt="" srcset="">
+        
+                        </div>
+                        <div class="image-card-text">
+                            <h1 class="image-card-head">Product packaging and labels</h1>
+                            <p class="image-card-detail">24-4-2019 <span>Enabled</span></p>
+                            <p class="image-card-desc">Creative Professional Designer's Team which satisfy your various Designing requirements. </p>
+                        </div>
+                    </div>
+
+                    <div class="image-card">
+                            <div class="image-store">
+                                <img class="main-image" src="../portfolio/Untitled-2 copy.jpg" alt="" srcset="">
+            
+                            </div>
+                            <div class="image-card-text">
+                                <h1 class="image-card-head">Product packaging and labels</h1>
+                                <p class="image-card-detail">24-4-2019 <span>Enabled</span></p>
+                                <p class="image-card-desc">Creative Professional Designer's Team which satisfy your various Designing requirements. </p>
+                            </div>
+                        </div>
+
+                        <div class="image-card view-all-card" id="view-all-card">
+                            <p>View All</p>
+                               
+                            </div>
+
+        </div>
+
+
+</div>
+
+
+
+</div>  
+
+<!-- ++++++++++++++++++++++++++++++++ users Container +++++++++++++++++++++++++++++++++++++++ -->
+
+<div class="hiden-container hide" id="user-container" >
+    
+    <div class="user-content">
+            <h1 class="latest-head"> <br> Admin Users </h1>
+            <table>
+
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>Position</th>
+                    <th>Email</th>
+                    <th>username</th>
+                    <th>Password</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <!-- ----------------------------------- edit ehen php --------------------------- -->
+                    <td>1</td>
+                    <td>Graphwizards</td>
+                    <td>graphwizards@gmail.com</td>
+                    <td>graph_wizards</td>
+                    <td>graphw1834</td>
+                    <td> <button id="usr-dlt" value="disable" class="golden-btn">Delete User</button> </td>
+
+                    <!-- ----------------------------------------------------------- -->
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Mohit Dhiman</td>
+                    <td>immohitdhiman@gmail.com</td>
+                    <td>immohitdhiman</td>
+                    <td>dhiman777</td>
+                    <td> <button id="usr-dlt" value="disable" class="golden-btn">Delete User</button> </td>
+                </tr>
+            </table>
+
+    </div>
+
+    <div class="add-user-content">
+
+
+       <!-- ------------------------------------- user add form ---------------------------------  -->
+<form class="add-users-form" autocomplete="off" autocapitalize="off" onsubmit="return adduservalidation() "  >
+<h1>Add New</h1>
+<input type="text" id="add-users-form-name" name="name" placeholder="Name" >
+<input type="email" id="add-users-form-email" placeholder="Email">
+<input type="text" id="add-users-form-username" class="" placeholder="username">
+<input type="password" id="add-users-form-password" placeholder="Password">
+<button class="golden-btn"  name="submit" > Submit </button>
+
+</form>
+
+<!-- -------------------------------------------------------------------------------------------------- -->
+
+<p class="warning" id="add-users-form-warning"></p>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+<!-- ++++++++++++++++++++++++++++++++ wallpaper Container +++++++++++++++++++++++++++++++++++++++ -->
+
+<div class="hiden-container hide" id="wallpaper-container" >
+    <div class="Wallpaper-container">
+
+
+            <!-- ----------------------------remove when php -------- -->
+        <div class="wallpaper-card-container">    
+            <div class="wallpaper-card-image">
+<img src="../portfolio/Untitled-1 copy.jpg" alt="" srcset="">
+            </div>
+            <div class="wallpaper-card-detail">
+                    <h1 class="image-card-head">Product packaging and labels</h1>
+                    <p class="image-card-detail">24-4-2019 <span>Activate</span></p>
+                    
+                   <button class="golden-btn" disabled="disabled">Activate</button> <button class="golden-btn">Deactivate</button>
+            </div>
+        </div>
+         <!-- ------------------------------------ -->
+
+
+    </div>
+
+
+
+    <div class="add-wallpaper">
+ <!-- ------------------------------- upload form --------------------------------- -->
+<form class="add-users-form" autocomplete="off" autocapitalize="off" onsubmit="return addwallpapervalidation() "  >
+<h1>Upload Wallpaper</h1>
+<input type="file" id="wallpaper-file" name="name" placeholder="choose file" >
+
+<input type="text" id="wallpaper-name"  placeholder="Name">
+<select name="wallpaper-status" id="">
+    <option value="activate">Activate</option>
+    <option value="deactivate">Deactivate</option>
+</select>
+<button class="golden-btn"  name="submit" > Submit </button>
+
+</form>
+
+<!-- -------------------------------------------------------------------------- -->
+    </div>
+
+    </div>
+
+    <!-- ++++++++++++++++++++++++++++++++ services Container +++++++++++++++++++++++++++++++++++++++ -->
+
+<div class="hiden-container hide" id="services-container" >
+   
+
+
+
+    </div>
+
+     <!-- ++++++++++++++++++++++++++++++++ About Container +++++++++++++++++++++++++++++++++++++++ -->
+
+<div class="hiden-container" id="about-container" style="background-color:rgba(15, 160, 71, 0.185); display:none; ">
+
+    </div>
+
+
+     <!-- ++++++++++++++++++++++++++++++++ portfolio Container +++++++++++++++++++++++++++++++++++++++ -->
+
+     <div class="hiden-container hide" id="portfolio-container" >
+         <div class="transparent-container">
+<a class="container-btn" href="#">Recent Delete <i class="fas fa-trash-alt"></i> </a>
+<a href="#" class="container-btn">Archives <i class="fas fa-archive"></i></a>
+         </div>
+
+            <div class="light-container">
+                    <!-- ------------------------------- upload form --------------------------------- -->
+                   <form class="add-users-form" autocomplete="off" method="post"  action="upload-img.php" enctype="multipart/form-data" onsubmit="return addwallpapervalidation() "  >
+                   <h1>Upload Work</h1> 
+                   <input type="file" name="image">
+                   <Select name="cat" aria-placeholder="Category">
+                        <option value="all">Choose Category </option>
+                        <option value="product_packaging_and_labels">Product packaging and labels</option>
+                        <option value="marketing_materials">Marketing materials</option>
+                        <option value="visual_identity">Visual identity</option>
+                        <option value="shirt_&_apparel_designs">Shirt & Apparel designs</option>
+                        <option value="websites_&_digital_plateforms">Websites & digital Plateforms</option>
+                    </Select>
+                    <input type="text" name="description" placeholder="Description">
+                   
+                    <button class="golden-btn" value="submit" name="submit" type="submit">submit</button>>
+                   
+                   </form>
+                   
+                   <!-- -------------------------------------------------------------------------- -->
+                       </div>
+<div class="transparent-container">
+    <a href="#" id="" class="container-btn">Product Packaging and labels </a>
+    <a href="#" id="" class="container-btn">Marketing Materials </a>
+    <a href="#" id="" class="container-btn">Visual Identity </a>
+    <a href="#" id="" class="container-btn">Shirt & Apparel Designs </a>
+    <a href="#" id="" class="container-btn"> Websites & digital Plateforms </a>
+
+</div>
+            <div class="light-container">
+
+
+                    <!-- ----------------------------remove when php -------- -->
+                <div class="wallpaper-card-container">    
+                    <div class="wallpaper-card-image">
+        <img src="../portfolio/Untitled-1 copy.jpg" alt="" srcset="">
+                    </div>
+                    <div class="wallpaper-card-detail">
+                            <h1 class="image-card-head">PLeadership Wisdom Book title</h1>
+                            <p class="image-card-detail">Product packaging and labels </p> 
+                            
+                            
+                           <button class="golden-btn" disabled="disabled">Edit</button> <button class="golden-btn">Delete</button>
+                    </div>
+                </div>
+                 <!-- ------------------------------------ -->
+        
+        
+            </div>
+        
+        </div>
+    
+     <!-- ++++++++++++++++++++++++++++++++ newslettter Container +++++++++++++++++++++++++++++++++++++++ -->
+
+     <div class="hiden-container  hide" id="newsletter-container"  ">
+<div class="light-container">
+
+
+        <table>
+                <tr>
+                    <td class="special-td">26</td>
+                    <td>24-5-2019</td>
+                    <td>immohitdhiman@gmail.com</td>
+                </tr>
+                <tr>
+                    <td class="special-td">25</td>
+                    <td>22-5-2019</td>
+                    <td>sunny4eever@gmail.com</td>
+                </tr>
+            </table>
+
+</div>
+        </div>
+
+            <!-- ++++++++++++++++++++++++++++++++ social Container +++++++++++++++++++++++++++++++++++++++ -->
+
+     <div class="hiden-container" id="social-container" style="background-color:rgba(155, 15, 160, 0.185); display:none; ">
+
+        </div>
+
+
+            <!-- ++++++++++++++++++++++++++++++++ mail Container +++++++++++++++++++++++++++++++++++++++ -->
+
+            <div class="hiden-container" id="mail-container" style="background-color:rgba(160, 15, 71, 0.185); display:none; ">
+
+                </div>
+
+            
+
+
+
+<script>
+    
+    </script>
+
+
+
+
+
+
+            </div>
+
+            <footer class="dash-footer">Copyright © 2018, Graphwizards Dashboard v2.1.1</footer>
+
+        </div>
+  
+
+    </div>
+</body>
+</html>
